@@ -1,12 +1,17 @@
-package com.company;
 
-public class Main {
+package com.company;
+import java.lang.*;
+import java.io.*;
+import java.util.*;
+ public class Main {
 
     public static void main(String[] args) {
         System.out.println(totalDistance());
         equal(2,12,2);
         triangle(15, 2,20);
         multiplyByLength();
+        equalSlices(11,5,2);
+        palindrome("mom");
     }
 
     public static double totalDistance()
@@ -43,11 +48,33 @@ public class Main {
     }
 
     public static void multiplyByLength(){
-        int[] a ={2,3,4,5};
-        int b = a.length;
+        int[] a ={2,3,4,5,10};
         for (int i=0; i<a.length; i++) {
-            System.out.print(a[i]*a.length+" ");
+            a[i] = a[i]*a.length;
+            System.out.println(a[i]+" ");
         }
     }
 
+    public static void equalSlices(int totalSlices, int recipients, int slicesEach)
+    {
+        if (recipients * slicesEach <= totalSlices)
+            System.out.println("True");
+        else
+            System.out.println("False");
+    }
+
+    public static void palindrome(String word){
+    StringBuffer reverseWord = new StringBuffer(word);
+    String word1 = reverseWord.reverse().toString();
+        if (word.equals(word1))
+            System.out.println("True");
+        else
+            System.out.println("False");
+    }
+
+    public static void numbersMaxAndMin(){
+        int[] numbers = {2,5,6,8,4,-10,56,17,-25};
+        for (int a=0; a<numbers.length; a++)
+            numbers[a].
+    }
 }
