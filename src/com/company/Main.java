@@ -12,6 +12,7 @@ import java.util.*;
         multiplyByLength();
         equalSlices(11,5,2);
         palindrome("mom");
+        numbersMaxAndMin();
     }
 
     public static double totalDistance()
@@ -74,7 +75,24 @@ import java.util.*;
 
     public static void numbersMaxAndMin(){
         int[] numbers = {2,5,6,8,4,-10,56,17,-25};
-        for (int a=0; a<numbers.length; a++)
-            numbers[a].
+        Arrays.sort(numbers);
+        for (int i=0; i<numbers.length; i++){
+            int a = numbers[0];
+            int b = numbers[numbers.length]
+            System.out.println(numbers[i]);
+        }
+    }
+
+    public static void game(String player1, String player2){
+        String a = "paper";
+        String b = "scissors";
+        String c = "rock";
+
+        if (player1.equals(a)&&player2.equals(b))
+            System.out.println("Win is Player 2!");
+        if (player1.equals(b)&&player2.equals(a))
+            System.out.println("Win is Player 1!");
+        if (player1.equals(c)&&player2.equals())
+            System.out.println("Win is Player 2!");
     }
 }
