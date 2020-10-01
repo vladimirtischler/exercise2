@@ -113,12 +113,13 @@ public class Main {
         //if (player1.equals(a)&&player2.equals(b))
             //System.out.println("Win Player 2!");}
 
-        public static void warOfNumbers(){
+        public static void warOfNumbers(){ //nedokončená úloha
             int[] numbers = {2,5,9,12};
             for (int i=0; i<numbers.length;i++)
             {
-                if (numbers[i]/2==1)
+                if (numbers[i]%2==0)
                     System.out.println(numbers[i]);
             }
         }
+
 }
