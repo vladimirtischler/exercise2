@@ -15,6 +15,8 @@ public class Main {
         palindrome("mom");
         numbersMaxAndMin();
         warOfNumbers();
+        Student student1 = new Student("Jano",25);
+        System.out.println(student1.getName() + ": " + student1.getStudentNumber());
         //game("paper", "scissors");
     }
 
