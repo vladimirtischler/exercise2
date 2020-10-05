@@ -15,8 +15,17 @@ public class Main {
         palindrome("mom");
         numbersMaxAndMin();
         warOfNumbers();
-        Student student1 = new Student("Jano",25);
-        System.out.println(student1.getName() + ": " + student1.getStudentNumber());
+        Student student1 = new Student("Jano",20,1234567894,"Čadca 021 21");
+        Student student2 = new Student("Sam",19,1469873212, "Čadca 023 11");
+        System.out.println(student1.getName() + ": " + student1.getStudentNumber() + " , " + student1.getPhoneNumber() + " , "+ student1.getAddress());
+        System.out.println(student2.getName() + ": " + student2.getStudentNumber() + " , " + student2.getPhoneNumber() + " , "+ student2.getAddress());
+        People people1 = new People("Fero", 25, 25000);
+        People people2 = new People("Jano", 27, 40000);
+        People people3 = new People("Martin", 35,50000);
+        System.out.println(people1.getBudget());
+        Triangle triangle1 = new Triangle(21,23,35,15);
+        System.out.println(triangle1.getPerimeter());
+        System.out.println(triangle1.getArea());
         //game("paper", "scissors");
     }
 
