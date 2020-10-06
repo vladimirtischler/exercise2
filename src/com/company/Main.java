@@ -1,7 +1,6 @@
 
 package com.company;
 import java.lang.*;
-import java.io.*;
 import java.util.*;
 
 public class Main {
@@ -19,14 +18,17 @@ public class Main {
         Student student2 = new Student("Sam",19,1469873212, "Čadca 023 11");
         System.out.println(student1.getName() + ": " + student1.getStudentNumber() + " , " + student1.getPhoneNumber() + " , "+ student1.getAddress());
         System.out.println(student2.getName() + ": " + student2.getStudentNumber() + " , " + student2.getPhoneNumber() + " , "+ student2.getAddress());
-        People people1 = new People("Fero", 25, 25000);
-        People people2 = new People("Jano", 27, 40000);
-        People people3 = new People("Martin", 35,50000);
-        System.out.println(people1.getBudget());
+        Person person1 = new Person("Fero", 25, 25000);
+        Person person2 = new Person("Jano", 27, 40000);
+        Person person3 = new Person("Martin", 35,50000);
+        System.out.println(totalBudget(new Person[]{person1,person2,person3}));
         Triangle triangle1 = new Triangle(21,23,35,15);
         System.out.println(triangle1.getPerimeter());
         System.out.println(triangle1.getArea());
-        //game("paper", "scissors");
+        Employee employee1 = new Employee("Vlado", "Hrach", new GregorianCalendar(2002,7,8), new JobPosition("IT Programmer",4000));
+        Employee employee2 = new Employee("Adrian","Kuzma", new GregorianCalendar(2003,3,6), new JobPosition("Military",4500));
+        System.out.println("Employe:"+employee1.getName()+" "+employee1.getUsername()+", "+ employee1.getJobPosition().getName()+", "+ employee1.getJobPosition().getSalary()+"Eur");
+        System.out.println("Employe:"+employee2.getName()+" "+employee2.getUsername()+", "+ employee2.getJobPosition().getName()+", "+ employee2.getJobPosition().getSalary()+"Eur");
     }
 
     public static double totalDistance()
@@ -94,43 +96,22 @@ public class Main {
         System.out.println(numbers[numbers.length -1]);
     }
 
-    //public static void game(String player1, String player2){
-      //  String a = "paper";
-        //String b = "scissors";
-        //String c = "rock";
-
-        //if (player1.equals(a)&&player2.equals(b))
-            //System.out.println("Win Player 2!");
-       // if (player1.equals(b)&&player2.equals(a))
-            //System.out.println("Win Player 1!");
-        //if (player1.equals(c)&&player2.equals(a))
-           // System.out.println("Win Player 2!");
-        //if (player1.equals(a)&&player2.equals(b))
-            //System.out.println("Win Player 2!");
-        //if (player1.equals(a)&&player2.equals(b))
-           // System.out.println("Win Player 2!");
-        //if (player1.equals(a)&&player2.equals(b))
-            //System.out.println("Win Player 2!");
-        //if (player1.equals(a)&&player2.equals(b))
-            //System.out.println("Win Player 2!");
-        //if (player1.equals(a)&&player2.equals(b))
-            //System.out.println("Win Player 2!");
-        //if (player1.equals(a)&&player2.equals(b))
-            //System.out.println("Win Player 2!");
-        //if (player1.equals(a)&&player2.equals(b))
-            //System.out.println("Win Player 2!");
-        //if (player1.equals(a)&&player2.equals(b))
-            //System.out.println("Win Player 2!");
-        //if (player1.equals(a)&&player2.equals(b))
-            //System.out.println("Win Player 2!");}
-
-        public static void warOfNumbers(){ //nedokončená úloha
-            int[] numbers = {2,5,9,12};
-            for (int i=0; i<numbers.length;i++)
-            {
-                if (numbers[i]%2==0)
-                    System.out.println(numbers[i]);
-            }
+    public static void warOfNumbers(){ //nedokončená úloha
+        int[] numbers = {2,5,9,12};
+        for (int i=0; i<numbers.length;i++)
+        {
+               if (numbers[i]%2==0)
+                   System.out.println(numbers[i]);
         }
+    }
+
+    public static int totalBudget(Person[] people){
+        int budget = 0;
+        for (int i = 0; i<people.length;i++){
+            budget += people[i].getBudget();
+        }
+        return budget;
+    }
+
 
 }

@@ -1,18 +1,25 @@
 package com.company;
 
-public class People {
+public class Person {
     String name;
     int age;
     int budget;
 
-    public People(String name, int age, int budget){
+    public Person(String name, int age, int budget){
         this.name = name;
         this.age = age;
         this.budget = budget;
     }
 
     public int getBudget() {
-        budget += budget;
         return budget;
+    }
+
+    public int getAge(){
+        return age;
+    }
+
+    public String getName(){
+        return name;
     }
 }
