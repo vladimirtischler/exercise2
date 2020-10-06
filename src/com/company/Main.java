@@ -27,7 +27,7 @@ public class Main {
         System.out.println(triangle1.getArea());
         Employee employee1 = new Employee("Vlado", "Hrach", new GregorianCalendar(2002,7,8), new JobPosition("IT Programmer",4000));
         Employee employee2 = new Employee("Adrian","Kuzma", new GregorianCalendar(2003,3,6), new JobPosition("Military",4500));
-        System.out.println("Employe:"+employee1.getName()+" "+employee1.getUsername()+", "+ employee1.getJobPosition().getName()+", "+ employee1.getJobPosition().getSalary()+"Eur");
+        System.out.println("Employe"+employee1.getName()+" "+employee1.getUsername()+", "+ employee1.getJobPosition().getName()+", "+ employee1.getJobPosition().getSalary()+"Eur");
         System.out.println("Employe:"+employee2.getName()+" "+employee2.getUsername()+", "+ employee2.getJobPosition().getName()+", "+ employee2.getJobPosition().getSalary()+"Eur");
     }
 
