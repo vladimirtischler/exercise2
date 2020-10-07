@@ -2,7 +2,7 @@ package com.company;
 
 public class JobPosition {
     String name;
-    private double salary;
+    double salary;
 
     public JobPosition(String name, double salary){
         this.name = name;
