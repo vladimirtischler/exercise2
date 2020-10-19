@@ -20,7 +20,8 @@ public class Main {
 
         numbersMaxAndMin();
 
-        warOfNumbers();
+        System.out.println(warOfNumbers(new int[] {3,15,5,16,4}));
+
         Student student1 = new Student("Jano",20,1234567894,"Čadca 021 21");
         Student student2 = new Student("Sam",19,1469873212, "Čadca 023 11");
         System.out.println(student1.getName() + ": " + student1.getStudentNumber() + " , " + student1.getPhoneNumber() + " , "+ student1.getAddress());
@@ -115,13 +116,24 @@ public class Main {
         System.out.println(numbers[numbers.length -1]);
     }
 
-    public static void warOfNumbers(){ //nedokončená úloha
-        int[] numbers = {2,5,9,12};
+    public static int warOfNumbers(int[] numbers){
+        int evenNumbers = 0;
+        int oddNumbers = 0;
         for (int i=0; i<numbers.length;i++)
         {
-               if (numbers[i]%2==0)
-                   System.out.println(numbers[i]);
+               if (numbers[i]%2==0) {
+                   evenNumbers = numbers[i] + evenNumbers;
+               }
+               else {
+                   oddNumbers+=numbers[i];
+               }
         }
+        if (evenNumbers>oddNumbers)
+            return (evenNumbers - oddNumbers);
+
+        else
+            return(oddNumbers-evenNumbers);
+
     }
 
     public static int totalBudget(Person[] people){
