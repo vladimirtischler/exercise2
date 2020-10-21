@@ -7,20 +7,14 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println(totalDistance());
-
-        equal(2,12,2);
-
-        multiplyByLength();
-
-        triangle(15, 2,20);
-
-        equalSlices(11,5,2);
-
-        palindrome("mom");
-
-        numbersMaxAndMin();
-
+        System.out.println(equal(2,12,2));
+        System.out.println(Arrays.toString(multiplyByLength(new int[]{2,3,4,5,10})));
+        System.out.println(triangle(15, 2,20));
+        System.out.println(equalSlices(11,5,2));
+        System.out.println(palindrome("mom"));
+        System.out.println(numbersMaxAndMin(new int[]{2,5,-10,56,17,-125,25,56}));
         System.out.println(warOfNumbers(new int[] {3,15,5,16,4}));
+        System.out.println(captureTheRook(new String[]{"B8","A8"}));
 
         Student student1 = new Student("Jano",20,1234567894,"Čadca 021 21");
         Student student2 = new Student("Sam",19,1469873212, "Čadca 023 11");
@@ -60,60 +54,58 @@ public class Main {
         return towerHeight/heightOfStep * (lenghtOfStep+heightOfStep);
     }
 
-    public static void equal(int a, int b, int c){
+    public static int equal(int a, int b, int c){
 
-         if (a==b && b==c)
-            System.out.println("3");
+        if (a==b && b==c)
+            return 3;
         else if (b==c)
-            System.out.println("2");
+            return 2;
         else if (a==c)
-            System.out.println("2");
+            return 2;
         else if (a==b)
-            System.out.println("2");
+            return 2;
         else if (a!=b && a!=c)
-            System.out.println("0");
+            return 0;
+        return 0;
     }
 
-    public static void triangle(int a, int b, int c){
+    public static boolean triangle(int a, int b, int c){
         if (a + b > c && a + c > b && b + c > a )
-            System.out.println("It is triangle.");
+            return true;
         else if (a + b < c)
-            System.out.println("It isn´t triangle.");
+            return false;
         else if (a + b == c)
-            System.out.println("It isn´t triangle.");
-
+            return false;
+        return false;
     }
 
-    public static void multiplyByLength(){
-        int[] a ={2,3,4,5,10};
+    public static int[] multiplyByLength(int[] a){
         for (int i=0; i<a.length; i++) {
             a[i] = a[i]*a.length;
-            System.out.println(a[i]+" ");
         }
+        return a;
     }
 
-    public static void equalSlices(int totalSlices, int recipients, int slicesEach)
+    public static boolean equalSlices(int totalSlices, int recipients, int slicesEach)
     {
         if (recipients * slicesEach <= totalSlices)
-            System.out.println("True");
+            return true;
         else
-            System.out.println("False");
+            return false;
     }
 
-    public static void palindrome(String word){
+    public static Boolean palindrome(String word){
     StringBuffer reverseWord = new StringBuffer(word);
     String word1 = reverseWord.reverse().toString();
         if (word.equals(word1))
-            System.out.println("True");
+            return true;
         else
-            System.out.println("False");
+            return false;
     }
 
-    public static void numbersMaxAndMin(){
-        int[] numbers = {2,5,-10,56,17,-125,25,56};
+    public static String numbersMaxAndMin(int[] numbers){
         Arrays.sort(numbers);
-        System.out.println(numbers[0]);
-        System.out.println(numbers[numbers.length -1]);
+        return (numbers[0]+" "+numbers[numbers.length -1]);
     }
 
     public static int warOfNumbers(int[] numbers){
@@ -136,6 +128,15 @@ public class Main {
 
     }
 
+    public static boolean captureTheRook(String[] canCapture){
+        var firstRook = canCapture[0].toCharArray();
+        var secondRook = canCapture[1].toCharArray();
+        for (int i=0;i<firstRook.length;i++){
+            if(firstRook[i]==secondRook[i]) return true;
+        }
+        return false;
+    }
+
     public static int totalBudget(Person[] people){
         int budget = 0;
         for (int i = 0; i<people.length;i++){
@@ -143,9 +144,4 @@ public class Main {
         }
         return budget;
     }
-
-
-
-
-
 }
